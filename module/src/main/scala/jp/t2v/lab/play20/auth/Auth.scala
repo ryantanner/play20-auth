@@ -30,7 +30,7 @@ trait Auth {
     _    <- Either.cond(authorize(user, authority), (), authorizationFailed(request)).right
   } yield user
 
-  private def restoreUser(implicit request: RequestHeader): Option[User] = for {
+  protected def restoreUser(implicit request: RequestHeader): Option[User] = for {
     cookie <- request.cookies.get(cookieName)
     token  <- CookieUtil.verifyHmac(cookie)
     userId <- idContainer.get(token)

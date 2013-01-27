@@ -12,7 +12,8 @@ object ApplicationBuild extends Build {
   val appDependencies = Seq(
     jdbc,
     anorm,
-    "org.mindrot" % "jbcrypt" % "0.3m"
+    "org.mindrot" % "jbcrypt" % "0.3m",
+    "com.typesafe.slick" %% "slick" % "1.0.0-RC2"
   )
 
   lazy val root = play.Project(appName, appVersion, appDependencies).settings(
