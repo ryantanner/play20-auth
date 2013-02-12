@@ -2,7 +2,7 @@ name := "play20.auth"
 
 version := "0.4-SNAPSHOT"
 
-scalaVersion := "2.10.0-RC1"
+scalaVersion := "2.10.0"
 
 crossVersion <<= scalaVersion { sv => if (sv contains "-") CrossVersion.full else CrossVersion.binary }
 
@@ -15,7 +15,7 @@ resolvers ++= Seq(
 )
 
 libraryDependencies ++= Seq(
-  "play" %% "play" % "2.1-SNAPSHOT"
+  "play" %% "play" % "2.1.0"
 )
 
 organization := "jp.t2v"
